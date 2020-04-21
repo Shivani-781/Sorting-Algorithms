@@ -6,9 +6,9 @@ import bubblesort.BubbleSort;
 import insertionsort.InsertionSort;
 import merge.MergeSort;
 import printarray.PrintArray;
-import mergesort.MSort;
 import heapsort.HeapSort;
 import quicksort.QuickSort;
+import selectionsort.SelectionSort;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,9 +48,15 @@ public class Main {
                 break;
 
             case 3:
+                MergeSort ob3 = new MergeSort(arr.length);
+                ob3.msort(arr, 0, arr.length-1);
+                p.printArr(arr);
                 break;
 
             case 4:
+                SelectionSort ob4 = new SelectionSort();
+                ob4.selectionSort(arr);
+                p.printArr(arr);
                 break;
 
             case 5:
