@@ -1,12 +1,12 @@
 package heapsort;
-
+// Using MinHeap and Recursion
 public class HeapSort {
     int[] arr;
     int sizeOfTree;
 
     public HeapSort(int size) {
-        arr = new int[size+1];
-        sizeOfTree = 0;
+        arr = new int[size];
+        sizeOfTree = -1;
     }
 
     public void insert(int value) {
@@ -17,8 +17,8 @@ public class HeapSort {
 
     public void heapify(int i)
     {
-        int largest = i/2;
-        if (i<=1) {
+        int largest = (i-1)/2;
+        if (i<=0) {
             return;
         }
 
@@ -41,7 +41,7 @@ public class HeapSort {
     }
 
     public void delete() {
-        arr =null;
+        arr = null;
         System.out.println("Heap deleted!");
     }
 
@@ -58,12 +58,12 @@ public class HeapSort {
             System.out.println("Empty!");
         }
         else {
-            System.out.println(arr[1]);
+            System.out.println(arr[0]);
         }
     }
 
     public void display() {
-        for(int i=1; i<arr.length; i++)
+        for(int i=0; i<arr.length; i++)
         {
             System.out.print(arr[i] +" ");
         }
