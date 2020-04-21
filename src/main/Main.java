@@ -2,10 +2,13 @@ package main;
 
 import java.util.Scanner;
 
+import bubblesort.BubbleSort;
+import insertionsort.InsertionSort;
 import merge.MergeSort;
 import printarray.PrintArray;
 import mergesort.MSort;
 import heapsort.HeapSort;
+import quicksort.QuickSort;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,25 +36,40 @@ public class Main {
         int ch = sc.nextInt();
         switch(ch) {
             case 1:
+                BubbleSort ob1 = new BubbleSort();
+                ob1.bsort(arr);
+                p.printArr(arr);
                 break;
+
             case 2:
+                InsertionSort ob2 = new InsertionSort();
+                ob2.sort(arr);
+                p.printArr(arr);
                 break;
+
             case 3:
                 break;
+
             case 4:
                 break;
+
             case 5:
+                QuickSort ob5 = new QuickSort();
+                ob5.quickSort(arr, 0, arr.length-1);
+                p.printArr(arr);
                 break;
+
             case 6:
-                HeapSort ob = new HeapSort(n);
+                HeapSort ob6 = new HeapSort(n);
                 for(int i=0; i<n; i++) {
-                    ob.insert(arr[i]);
+                    ob6.insert(arr[i]);
                 }
-                ob.display();
-                System.out.println(ob.sizeOfArray());
-                ob.peek();
-                ob.delete();
+                ob6.display();
+                System.out.println(ob6.sizeOfArray());
+                ob6.peek();
+                ob6.delete();
                 break;
+
             default:
                 System.out.println("Invalid Choice! Better luck next time. ");
         }
