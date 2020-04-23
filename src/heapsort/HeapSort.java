@@ -62,14 +62,6 @@ public class HeapSort {
         }
     }
 
-    public void display() {
-        for(int i=0; i<=getSizeOfTree(); i++)
-        {
-            System.out.print(arr[i] +" ");
-        }
-        System.out.println();
-    }
-
     public int extract() {
         if (sizeOfTree==0) {
             System.out.println("Empty Heap!");
@@ -119,5 +111,14 @@ public class HeapSort {
         }
         heapifyExtract(smallest);
     }
+
+    public void display() {
+        for(int i=0; i<=getSizeOfTree(); i++)
+        {
+            System.out.print(arr[i] +" ");
+        }
+        System.out.println();
+    }
+    
 }
 
