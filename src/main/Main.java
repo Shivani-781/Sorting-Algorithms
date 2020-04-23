@@ -71,7 +71,14 @@ public class Main {
                     ob6.insert(arr[i]);
                 }
                 ob6.display();
+                System.out.println("Size of array is: ");
                 System.out.println(ob6.sizeOfArray());
+                System.out.println("Extracted elements are: ");
+                System.out.println(ob6.extract());
+                ob6.display();
+                System.out.println(ob6.extract());
+                ob6.display();
+                System.out.println("Root is: ");
                 ob6.peek();
                 ob6.delete();
                 break;

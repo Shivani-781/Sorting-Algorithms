@@ -63,10 +63,61 @@ public class HeapSort {
     }
 
     public void display() {
-        for(int i=0; i<arr.length; i++)
+        for(int i=0; i<=getSizeOfTree(); i++)
         {
             System.out.print(arr[i] +" ");
         }
         System.out.println();
     }
+
+    public int extract() {
+        if (sizeOfTree==0) {
+            System.out.println("Empty Heap!");
+            return -1;
+        }
+        else {
+            int result = arr[0];
+            arr[0] = arr[getSizeOfTree()];
+            sizeOfTree--;
+            heapifyExtract(0);
+            return result;
+        }
+    }
+
+    public void heapifyExtract(int index) {
+        int left = 2*index + 1;
+        int right = 2*index + 2;
+        int smallest = 0;
+        // only root is available
+        if (sizeOfTree<left)
+        {
+            return;
+        }
+        // one root, one child
+        else if (sizeOfTree == left) {
+            if(arr[index] > arr[left]) {
+                int temp = arr[index];
+                arr[index] = arr[left];
+                arr[left] = temp;
+            }
+            return;
+        }
+        // one root, two child
+        else {
+            if(arr[left] <arr[right])
+            {
+                smallest = left;
+            }
+            else {
+                smallest = right;
+            }
+            if(arr[index] > arr[smallest]) {
+                int temp = arr[index];
+                arr[index] = arr[smallest];
+                arr[smallest] = temp;
+            }
+        }
+        heapifyExtract(smallest);
+    }
 }
+
